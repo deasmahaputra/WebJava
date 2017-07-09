@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+index.zul
+
+{{IS_NOTE
+	Purpose:
+		
+	Description:
+		
+	History:
+		Mon Jun 12 21:23:35     2006, Created by tomyeh
+		Fri May 01 04:36:35     2009, Modified by stera
+}}IS_NOTE
+
+Copyright (C) 2006 Potix Corporation. All Rights Reserved.
+
+{{IS_RIGHT
+}}IS_RIGHT
+-->
+<zk xmlns:h="http://www.w3.org/1999/xhtml" xmlns:zk="http://www.zkoss.org/2005/zk">
+    <window apply="Controller">
+    <borderlayout height="750px">
+       
+    <north title="MANAJEMEN DOSIR" style="font-size:30px" maxsize="700" size="500%" splittable="true" collapsible="true">
+       
+    <tabbox id="tb" height="900px">
+    <tabs id="tabs">
+        <tab id="A" label="Display Dosir" />
+        <tab id="B" label="Peminjaman Dosir" />
+        <tab id="C" label="Pengambilan Dosir" />
+        <tab id="D" label="Perubahan No Dosir" />
+        <tab id="E" label="Pengisian No Dosir Tersedia" />
+        <tab id="F" label="Informasi No Tersedia" />
+    </tabs>
+    <tabpanels>
+        <tabpanel>
+                        <auxhead>
+            <auxheader colspan="2" label="Display Dosir" style="font-size:14px" image="../images/picture.png"/>
+            </auxhead>
+            <div align="center" width= "100%">
+	    		Search By :<combobox id="cmb">
+		     		<comboitem label="Satu"/>
+                                <comboitem label="Dua"/>
+	                </combobox>
+                        <textbox value=""/>		    		
+            </div><h:br />
+            <div width="100%" style="border:1px black solid" >
+            <div align="right" width= "50%" >
+                    Nama Pensiun :  <textbox value=""/><h:br /><h:br />
+                    Nomor Dosir  : <textbox value=""/><h:br /><h:br /> 
+                    Nomor Lajur  : <textbox value="" /><h:br /><h:br /> 
+                    Nomor Lemari  : <textbox value="" /><h:br /><h:br /> 
+                    Nomor Rak  : <textbox value="" /><h:br /><h:br />
+                    Nomor Box  : <textbox value="" /><h:br /><h:br /> 
+                    Nomor Status  : <textbox value="" /> <h:br /><h:br /> 
+                
+            </div>
+            <div align="right" width= "50%" >
+                    
+                    Kode Stop  : <textbox value=""/><h:br /><h:br /> 
+                    TMT Dapem  : <textbox value="" /><h:br /><h:br /> 
+                    Keterangan  : <textbox value="" /><h:br /><h:br /> 
+                    Uraian  : <textbox value="" /><h:br /><h:br />
+
+                
+            </div>
+            </div>
+            <div width="100%" height="300px" style="border:1px black solid" align="center">
+                Informasi Peminjaman Dosir : <h:br /><h:br /> 
+                Status Pinjam  : <textbox value=""/><h:br /><h:br /> 
+                Dipinjamkan Oleh : <textbox value="" /><h:br /><h:br /> 
+                Tanggal Pinjam  : <textbox value="" /><h:br /><h:br /> 
+                Jatuh Tempo : <textbox value="" /><h:br /><h:br />
+                Keterangan : <textbox value="" /><h:br /><h:br />
+            </div>
+            
+           
+        </tabpanel>
+        <tabpanel>
+             
+            <label id="" value="Search by :"/> 
+           
+           
+           <combobox>
+		  <comboitem label="Satu"/>
+                  <comboitem label="Dua"/>
+	   </combobox>
+            
+           <textbox value="test"/><h:br />
+           <hbox align="center">
+           <label id="" value="Nama Pensiun :"/>
+           <textbox value="" width="300"/>
+           </hbox>
+            
+        </tabpanel>
+        <tabpanel>
+            <grid hflex="1">
+                <columns visible="false">
+                    <column/><!-- define 2 columns to enable auxhead/er -->
+                    <column/>
+                </columns>
+                <auxhead>
+            <auxheader colspan="2" label="Display Dosir" style="font-size:14px" image="../images/picture.png"/>
+               </auxhead>
+                
+            </grid>
+            
+        </tabpanel>
+        <tabpanel>
+            <grid hflex="1"> <!-- hflex="1" - available width inside parent (window) -->
+        
+                
+        <columns visible="false">
+            <column/><!-- define 2 columns to enable auxhead/er -->
+            <column/>
+            
+        </columns>
+        <auxhead>
+            <auxheader colspan="2" label="Display Dosir" style="font-size:14px" image="../images/picture.png"/>
+        </auxhead>
+        
+        <rows>
+            <row>
+                Serach By : 
+                <combobox>
+		     		<comboitem label="Satu"/>
+                                <comboitem label="Dua"/>
+	        </combobox>
+                <textbox id="search" hflex="1" constraint="no empty"/>
+            </row>
+            <row>
+                Nama Pensiunan <textbox id="nameBox" hflex="1" constraint="no empty"/>
+            </row>
+            <row>
+                Nomor Dosir <textbox id="nameDosir" constraint="no empty"/> 
+                
+            </row>
+            <row>
+               <label id="" value = "Gender :"/>
+                <radiogroup id="genderRadio">
+                    <radio label="Male" value="male"  checked="true"/>
+                    <radio label="Female" value="female" />
+                </radiogroup>
+            </row>
+            <row >
+                Birthday <datebox id="birthdayBox" hflex="1" constraint="no empty, no today, no future"/>
+            </row>
+            
+            <row spans="2" align="right">
+                <hlayout>
+                    <button id="resetButton" label="Reset" />
+                    <button id="submitButton" label="Submit" disabled="true"/>
+                </hlayout>
+            </row>
+        </rows>
+    </grid>
+        </tabpanel>
+        <tabpanel></tabpanel>
+    </tabpanels>
+    </tabbox>
+         
+	</north> 
+    </borderlayout>
+    
+   
+    
+    
+
+    </window>
+</zk>
